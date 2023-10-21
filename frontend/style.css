@@ -1,0 +1,12 @@
+:root {
+    --color-yellow: #f6ff7a;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-dark-yellow:#8a915e;
+   
+  }
+
+  /* to use css vairalbe eg 
+  color: var(--color-yellow)
+
+  */
