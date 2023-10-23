@@ -21,7 +21,7 @@ body{
     border-radius: 3px;
 }
 .carousel-inner> div{
-    height: 350px;
+    height: 350px; 
      
 }
 
@@ -31,10 +31,9 @@ body{
     left: 120px;
     width: 30%;
     height: 140px; 
-    color: var(--color-white)
+    color: var(--color-black)
 } 
-.movie-carousel-caption >a{  
-    color: var(--color-white);  
+.movie-carousel-caption >a{   
     font-size: 20px;
 } 
 .movie-carousel-caption >button{   
@@ -42,10 +41,102 @@ body{
     color: var(--color-black);
     background-color: var(--color-white);  
 } 
-.carousel-inner >img{
-    opacity: 0.7;
+.carousel-inner img{
+    opacity: 0.8;
 }
 
+.movies-today>h4{
+    color: var(--color-yellow);
+}
+.movies-today{
+    color:var(--color-white);
+}
 .popular-movies>h4{
     color: var(--color-yellow);
 }
+.movie-card {
+    position: relative;  
+}
+
+.movie-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../images/godfather.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: brightness(0.9);
+    z-index: 0;
+}
+
+.movie-card-description{
+    color: var(--color-yellow);
+}
+.card-body{
+    z-index: 1;
+}
+.ticket-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 25%;
+    color: var(--color-yellow);
+    
+}
+
+.scrollable-movie-cards-today {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%; /* Assuming each card is 200px wide + 30px for padding/margin */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+.scrollable-movie-cards-latest {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%; 
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.scrollable-movie-cards-today::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, etc. */
+}
+.scrollable-movie-cards-latest::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, etc. */
+}
+.card.movie-card {
+    flex: 0 0 auto; /* Prevent card from stretching and set it to not grow or shrink */
+    margin-right: 15px; /* Space between cards */
+    width: 45%;
+}
+
+.scroll-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    top: 10px; 
+    z-index: 3;  
+}
+
+#scroll-left {
+    left: 0; 
+}
+
+#scroll-right { 
+    left: 95%; 
+    right: 0; 
+}
+
+
+#scroll-left-latest {
+    left: 0; 
+}
+
+#scroll-right-latest{ 
+    left: 99%;
+    right: 0; 
+}
+

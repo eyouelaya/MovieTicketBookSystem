@@ -10,6 +10,11 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/homepage.css" />
     <title>Home</title>
@@ -236,13 +241,156 @@
         </button>
       </div>
     </div>
-    <div class="container mt-5 popular-movies">
+    <div class="container mt-5 movies-today">
       <h4>MOVIES AVAILABLE TODAY</h4>
+      <div class="row">
+        <div class="col">
+          <div class="container mt-4 position-relative">
+            <button id="scroll-left" class="scroll-btn position-absolute">
+              &lt;
+            </button>
+            <button id="scroll-right" class="scroll-btn position-relative">
+              &gt;
+            </button>
+
+            <!-- Start of scrollable movie cards container -->
+            <div class="scrollable-movie-cards-today">
+              <!-- Movie Card 1 -->
+              <div class="card movie-card">
+                <div class="movie-background"></div>
+                <div class="card-body">
+                  <div class="ticket-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                  </div>
+                  <div class="movie-card-description">
+                    <h5 class="card-title text-center mt-3">Movie Name</h5>
+                    <p class="card-text text-center">
+                      <i class="fas fa-clock"></i> 1 H 20 mins
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Movie Card 2 -->
+              <div class="card movie-card">
+                <div class="movie-background"></div>
+                <div class="card-body">
+                  <div class="ticket-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                  </div>
+                  <div class="movie-card-description">
+                    <h5 class="card-title text-center mt-3">Movie Name</h5>
+                    <p class="card-text text-center">
+                      <i class="fas fa-clock"></i> 1 H 20 mins
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card movie-card">
+                <div class="movie-background"></div>
+                <div class="card-body">
+                  <div class="ticket-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                  </div>
+                  <div class="movie-card-description">
+                    <h5 class="card-title text-center mt-3">Movie Name</h5>
+                    <p class="card-text text-center">
+                      <i class="fas fa-clock"></i> 1 H 20 mins
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more movie cards as needed -->
+            </div>
+
+            <!-- End of scrollable movie cards container -->
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <div class="col-auto">
+              <label class="col-form-label" for="searchMovies">Search</label>
+            </div>
+            <div class="col">
+              <input
+                class="form-control"
+                id="searchMovies"
+                name="searchMovies"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3 popular-movies">
+      <h4 class="mt-5">LATEST RELEASE</h4>
+      <div class="col">
+        <div class="container mt-4 position-relative">
+          <button id="scroll-left-latest" class="scroll-btn position-absolute">
+            &lt;
+          </button>
+          <button id="scroll-right-latest" class="scroll-btn position-relative">
+            &gt;
+          </button>
+
+          <!-- Start of scrollable movie cards container -->
+          <div class="scrollable-movie-cards-latest">
+            <!-- Movie Card 1 -->
+            <div class="card movie-card">
+              <div class="movie-background"></div>
+              <div class="card-body">
+                <div class="ticket-icon">
+                  <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="movie-card-description">
+                  <h5 class="card-title text-center mt-3">Movie Name</h5>
+                  <p class="card-text text-center">
+                    <i class="fas fa-clock"></i> 1 H 20 mins
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Movie Card 2 -->
+            <div class="card movie-card">
+              <div class="movie-background"></div>
+              <div class="card-body">
+                <div class="ticket-icon">
+                  <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="movie-card-description">
+                  <h5 class="card-title text-center mt-3">Movie Name</h5>
+                  <p class="card-text text-center">
+                    <i class="fas fa-clock"></i> 1 H 20 mins
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card movie-card">
+              <div class="movie-background"></div>
+              <div class="card-body">
+                <div class="ticket-icon">
+                  <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="movie-card-description">
+                  <h5 class="card-title text-center mt-3">Movie Name</h5>
+                  <p class="card-text text-center">
+                    <i class="fas fa-clock"></i> 1 H 20 mins
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Add more movie cards as needed -->
+          </div>
+
+          <!-- End of scrollable movie cards container -->
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
