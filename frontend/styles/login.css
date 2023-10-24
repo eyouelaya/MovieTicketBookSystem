@@ -1,0 +1,37 @@
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-black);
+}
+.nav-style {
+    background-color: var(--color-black); 
+}
+.nav-style a, svg{
+    background-color: var(--color-black);
+    color: var(--color-yellow);
+}
+.nav-style button>span{
+    background-color: var(--color-dark-yellow);
+    border-radius: 4px;
+}
+.nav-style a:hover{
+    color: var(--color-white);
+}
+body{
+    background-color: var(--color-black);
+}
+.login-body{
+    margin-top: 100px;
+    width: 50%;
+    
+}
+.login-body h3,label{
+    color: var(--color-yellow);
+}
+
+.login-body .btn{
+    background-color: var(--color-yellow);
+    width: 100%;
+}
+
+.login-body .btn:hover{
+    background-color: var(--color-dark-yellow);
+}
