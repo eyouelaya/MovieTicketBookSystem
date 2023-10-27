@@ -5,23 +5,7 @@ a{
     text-decoration: none;
     color: var(--color-black);
 }
-.nav-style {
-    background-color: var(--color-black); 
-}
-.nav-style a, svg{
-    background-color: var(--color-black);
-    color: var(--color-yellow);
-}
-.nav-style button>span{
-    background-color: var(--color-dark-yellow);
-    border-radius: 4px;
-}
-.nav-style a:hover{
-    color: var(--color-white);
-}
-body{
-    background-color: var(--color-black);
-}
+
 
 .movie-carousel div{
     border-radius: 3px;
@@ -154,4 +138,100 @@ body{
     left: 99%;
     right: 0; 
 }
+/* modal */
+body {
+    font-family: Arial, sans-serif;
+}
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: var(--color-black);
+    color: var(--color-yellow);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: left;
+    z-index: 5;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.movie-image {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+}
+
+.close-btn {
+    color: var(--color-yellow);
+    position: absolute;  /* Added this line */
+    top: 10px;           /* Added this line */
+    right: 10px;         /* Added this line */
+    font-size: 28px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    cursor: pointer; 
+    filter: brightness(0.8);
+    
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--color-dark-yellow);
+    text-decoration: none;
+    cursor: pointer;
+}
+#todayCardBook1:hover, #todayCardBook1:focus{
+    cursor: pointer;
+}
+#todayCardBook2:hover, #todayCardBook2:focus{
+    cursor: pointer;
+}
+#todayCardBook3:hover, #todayCardBook3:focus{
+    cursor: pointer;
+}
+#todayCardBook4:hover, #todayCardBook4:focus{
+    cursor: pointer;
+}
+#todayCardBook5:hover, #todayCardBook5:focus{
+    cursor: pointer;
+}
+#modalbookMovie{
+ background-color: var(--color-yellow);
+}
+#modalbookMovie:hover{
+    background-color: var(--color-dark-yellow);
+   }
+
+#movieModal{
+    z-index: 100;
+}
+   
+   
