@@ -77,3 +77,38 @@ async function deleteMovieById(movieId) {
     console.error('Error:', error)
   }
 }
+
+const editForm = document.getElementById('editForm')
+document
+  .getElementById('btnEditMovie')
+  .addEventListener('click', async function (event) {
+    event.preventDefault()
+
+    async function edit() {
+      const formData = new FormData(editForm)
+      const movieId = document.getElementById('editId').value
+
+      try {
+        const response = await fetch(
+          `http://localhost:3000/movies/${movieId}`,
+          {
+            method: 'PUT',
+            body: formData,
+          }
+        )
+
+        if (response.ok) {
+          const jsonResponse = await response.json()
+          console.log(jsonResponse)
+
+          form.reset()
+        } else {
+          console.error('Failed to edit the movie.')
+        }
+      } catch (error) {
+        console.error('An error occurred:', error)
+      }
+    }
+
+    edit()
+  })
