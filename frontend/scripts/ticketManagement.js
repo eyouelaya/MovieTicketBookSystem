@@ -1,18 +1,26 @@
 // Function to populate the table with tickets
+// Store a Set to keep track of displayed ticket codes
+const displayedTicketCodes = new Set();
+
+// Function to populate the table with tickets, checking if it has been displayed
 const populateTable = (ticket) => {
     const ticketTable = document.getElementById('ticketTable');
+    
+    if (!displayedTicketCodes.has(ticket.code)) {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${ticket._id}</td>
+            <td>${ticket.code}</td>
             <td>${ticket.movieName}</td>
             <td>${ticket.runningTime}</td>
-            <td>${new Date(ticket.movieDate).toLocaleDateString()}</td>
+            <td>${ticket.movieDate}</td>
             <td class="action-buttons">
-                <button class="edit-button" onclick="editTicket('${ticket._id}')">Edit</button>
-                <button class="delete-button" onclick="deleteTicket('${ticket._id}')">Delete</button>
+                <button class="edit-button" onclick="editTicket('${ticket.code}')">Edit</button>
+                <button class="delete-button" onclick="deleteTicket('${ticket.code}')">Delete</button>
             </td>
         `;
         ticketTable.appendChild(row);
+        displayedTicketCodes.add(ticket.code);
+    }
 };
 
 // Function to fetch and display all tickets
@@ -65,13 +73,10 @@ async function deleteTicket(ticketId) {
 }
 
 // Function to edit a ticket
-const editTicket = (ticketId) => {
-    // Redirect to the edit page with the selected ticketId or implement an edit form in this page.
-    window.location.href = `edit-ticket.html?ticketId=${ticketId}`;
+ async function editTicket(ticketId) {
+      window.open("ticketEdit.html?id="+ticketId);
+
 };
 
 // Event listeners
 document.getElementById('searchButton').addEventListener('click', searchTicket);
-
-// Initial load of tickets
-//getTickets();

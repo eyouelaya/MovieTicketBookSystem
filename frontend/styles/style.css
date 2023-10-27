@@ -5,6 +5,24 @@
     --color-dark-yellow:#8a915e;
    
   }
+  body{
+    background-color: var(--color-black);
+}
+  .nav-style {
+    background-color: var(--color-black); 
+}
+.nav-style a, svg{
+    background-color: var(--color-black);
+    color: var(--color-yellow);
+}
+.nav-style button>span{
+    background-color: var(--color-dark-yellow);
+    border-radius: 4px;
+}
+.nav-style a:hover{
+    color: var(--color-white);
+}
+
 
   /* to use css vairalbe eg 
   color: var(--color-yellow)
