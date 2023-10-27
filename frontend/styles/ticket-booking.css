@@ -1,3 +1,7 @@
+body{
+  background-color: var(--color-black);
+  color:var(--color-yellow)
+}
 
 .time-box {
   border: 0.5px solid black;
@@ -5,22 +9,34 @@
   padding: 10px;
   text-align: center;
   cursor: pointer;
+  background-color: var(--color-white);
+  color:var(--color-black)
 }
 
-.selected {
-  background-color: var(--color-yellow);
-}
 .carousel-cell {
   border: 0.5px solid black;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
   cursor: pointer;
+  background-color: var(--color-white);
+  color:var(--color-black)
 }
+
+.selected {
+  background-color: var(--color-yellow);
+}
+
 .btn.disabled {
   background-color: #ccc;
   color: #666;
   cursor: not-allowed;
   border: none;
+}
+.btn{
+  background-color: var(--color-yellow);
+}
+.btn:hover{
+  background-color: var(--color-dark-yellow);
 }
 
