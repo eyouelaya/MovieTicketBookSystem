@@ -114,3 +114,14 @@ function loadLastestRelease(movies) {
   console.log(movies.length);
   const recent = movies.slice(movies.length, movies.length - 1);
 }
+
+//search function
+document
+  .getElementById("searchMovies")
+  .addEventListener("input", function (event) {
+    // Get the current value of the input field
+    const inputValue = event.target.value;
+
+    // Now you can use inputValue, which will contain the text as it's being entered
+    console.log("Current input:", inputValue);
+  });
