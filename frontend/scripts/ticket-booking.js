@@ -5,6 +5,9 @@ const endTime = 18
 
 const interval = 1
 
+const urlParams = new URLSearchParams(window.location.search)
+const id = urlParams.get('id')
+
 for (let i = startTime; i < endTime; i += interval) {
   const timeSlot = document.createElement('div')
   timeSlot.className = 'col-md-2 p-3'
@@ -104,12 +107,37 @@ function updateButtonState() {
 
 const continueButton = document.getElementById('continueButton')
 
+let movieName
+let runningTime
+let image
+
+function fetchMovie() {
+  fetch('http://localhost:3000/movies/' + id)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data)
+      movieName = data.title
+      runningTime = data.runningTime
+      image = data.imageLink
+    })
+    .catch((error) => {
+      resultElement.textContent = 'Error: ' + error.message
+    })
+}
+
+fetchMovie(id)
+
 continueButton.addEventListener('click', function () {
   let date = selectedDate + ' ' + selectedDateDay + ' ' + selectedTime
   const ticketData = {
-    movieName: 'John Wick',
-    runningTime: '120 minutes',
-    image: 'imageurl',
+    movieName: movieName,
+    runningTime: runningTime,
+    image: image,
     movieDate: date,
   }
 
