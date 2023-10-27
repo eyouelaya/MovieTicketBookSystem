@@ -1,6 +1,10 @@
 h1,h2,h3,h4,h5,h6 {
     color: var(--color-black);
 }
+a{
+    text-decoration: none;
+    color: var(--color-black);
+}
 .nav-style {
     background-color: var(--color-black); 
 }
@@ -31,11 +35,17 @@ body{
     text-align: left;
     top: 100px;
     left: 120px;
-    width: 30%;
+    width: 20%;
     height: 140px; 
-    color: var(--color-black)
+    color: var(--color-black);
 } 
-.movie-carousel-caption >a{   
+.movie-carousel-caption >h3{
+    background-color: var(--color-white);
+    opacity: 0.6; 
+}
+.movie-carousel-caption >a{  
+    background-color: var(--color-white);
+    opacity: 0.6; 
     font-size: 20px;
 } 
 .movie-carousel-caption >button{   
@@ -43,6 +53,10 @@ body{
     color: var(--color-black);
     background-color: var(--color-white);  
 } 
+.movie-carousel-caption >button:hover{
+    background-color: var(--color-white);
+    opacity: 0.5;
+}
 .carousel-inner img{
     opacity: 0.8;
 }
@@ -91,25 +105,25 @@ body{
 .scrollable-movie-cards-today {
     display: flex;
     overflow-x: scroll;
-    width: 100%; /* Assuming each card is 200px wide + 30px for padding/margin */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    width: 100%;  
+    scrollbar-width: none;  
 }
 .scrollable-movie-cards-latest {
     display: flex;
     overflow-x: scroll;
     width: 100%; 
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    scrollbar-width: none; 
 }
 
 .scrollable-movie-cards-today::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari, etc. */
+    display: none; 
 }
 .scrollable-movie-cards-latest::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari, etc. */
+    display: none;  
 }
 .card.movie-card {
-    flex: 0 0 auto; /* Prevent card from stretching and set it to not grow or shrink */
-    margin-right: 15px; /* Space between cards */
+    flex: 0 0 auto; 
+    margin-right: 15px;  
     width: 45%;
 }
 
