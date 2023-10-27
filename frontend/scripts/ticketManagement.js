@@ -1,17 +1,6 @@
 // Function to populate the table with tickets
-const populateTable = (tickets) => {
+const populateTable = (ticket) => {
     const ticketTable = document.getElementById('ticketTable');
-    ticketTable.innerHTML = `
-        <tr>
-            <th>Ticket Code</th>
-            <th>Movie Name</th>
-            <th>Running Time</th>
-            <th>Movie Date</th>
-            <th></th>
-        </tr>
-    `;
-
-    tickets.forEach((ticket) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${ticket._id}</td>
@@ -24,53 +13,56 @@ const populateTable = (tickets) => {
             </td>
         `;
         ticketTable.appendChild(row);
-    });
 };
 
 // Function to fetch and display all tickets
-const getTickets = () => {
-    fetch('http://localhost:3000/tickets')
-        .then((response) => response.json())
-        .then((tickets) => {
-            populateTable(tickets);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+async function getTickets() {
+    const response = await fetch('http://localhost:3000/tickets')
+        if(response.ok){
+            let ticket = await response.json();
+            populateTable(ticket);
+        }
 };
 
 // Function to search for tickets
-const searchTicket = () => {
+async function searchTicket() {
     const searchInput = document.getElementById('searchInput').value;
-    const response= fetch(`http://localhost:3000/tickets/${searchInput}`)
-    .then((response) => {
+    const response= await fetch(`http://localhost:3000/tickets/${searchInput}`)
         if (!response.ok) {
             // Handle the case where the ticket is not found
             alert('ticket number: '+searchInput+' not found');
         } else {
-            return response.json();
+            let ticket = await response.json();
+            if(!ticket.movieName)
+            return;
+            populateTable(ticket);
         }
-    })
-        .then((tickets) => {
-            populateTable([tickets]);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
-};
+}
+
+
 
 // Function to delete a ticket
-const deleteTicket = (ticketId) => {
-    fetch(`http://localhost:3000/tickets/${ticketId}`, {
+async function deleteTicket(ticketId) {
+    const response = await fetch(`http://localhost:3000/tickets/${ticketId}`, {
         method: 'DELETE',
-    })
-        .then(() => {
-            getTickets();
-        })
-        .catch((error) => {
-            console.error(error);
-        });
-};
+    });
+
+    if (response.ok) {
+        alert("Ticket deleted successfully!");
+        // Find and remove the table row for the deleted ticket
+        const ticketTable = document.getElementById('ticketTable');
+        const rows = ticketTable.getElementsByTagName('tr');
+        for (let i = 0; i < rows.length; i++) {
+            const cells = rows[i].getElementsByTagName('td');
+            if (cells.length > 0 && cells[0].textContent === ticketId) {
+                ticketTable.deleteRow(i);
+                break; // Exit the loop since we found and removed the row
+            }
+        }
+    } else {
+        alert("Failed to delete ticket.");
+    }
+}
 
 // Function to edit a ticket
 const editTicket = (ticketId) => {
