@@ -72,6 +72,7 @@ timeBoxes.forEach((box) => {
 
     box.classList.add('selected')
     selectedTime = box.textContent
+    console.log(selectedTime)
     updateButtonState()
   })
 })
@@ -84,16 +85,35 @@ dateCells.forEach((cell) => {
 
     cell.classList.add('selected')
     selectedDate = cell.querySelector('.date-numeric').textContent
+    selectedDateDay = cell.querySelector('.date-day').textContent
+    console.log(selectedDate)
+    console.log(selectedDateDay)
     updateButtonState()
   })
 })
 
 function updateButtonState() {
   if (selectedDate && selectedTime) {
-    selectButton.classList.remove('disabled')
-    selectButton.disabled = false
+    continueButton.classList.remove('disabled')
+    continueButton.disabled = false
   } else {
-    selectButton.classList.add('disabled')
-    selectButton.disabled = true
+    continueButton.classList.add('disabled')
+    continueButton.disabled = true
   }
 }
+
+const continueButton = document.getElementById('continueButton')
+
+continueButton.addEventListener('click', function () {
+  let date = selectedDate + ' ' + selectedDateDay + ' ' + selectedTime
+  const ticketData = {
+    movieName: 'John Wick',
+    runningTime: '120 minutes',
+    image: 'imageurl',
+    movieDate: date,
+  }
+
+  localStorage.setItem('ticketData', JSON.stringify(ticketData))
+
+  window.location.href = 'payment.html'
+})
