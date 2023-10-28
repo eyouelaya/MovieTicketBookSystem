@@ -42,6 +42,10 @@ async function display() {
   let json
   if (response.ok) {
     json = await response.json()
+    let movieList = document.getElementById('movieList')
+    while (movieList.firstChild) {
+      movieList.removeChild(movieList.firstChild)
+    }
     for (let e of json) {
       addRowToTable(e._id, e.title)
     }
@@ -50,6 +54,7 @@ async function display() {
 
 function addRowToTable(id, title) {
   let row = document.createElement('tr')
+
   row.setAttribute('id', id)
   for (let e of arguments) {
     let cell = document.createElement('td')
@@ -78,8 +83,8 @@ document
 
         if (response.ok) {
           const jsonResponse = await response.json()
-          console.log(jsonResponse)
-
+          alert('Movie added successfully')
+          display()
           form.reset()
         } else {
           console.error('Failed to upload the movie.')
@@ -94,7 +99,8 @@ document
 
 document
   .getElementById('btnDeleteMovie')
-  .addEventListener('click', async () => {
+  .addEventListener('click', async (event) => {
+    event.preventDefault()
     const movieId = document.getElementById('movieId').value
     await deleteMovieById(movieId)
   })
@@ -105,23 +111,24 @@ async function deleteMovieById(movieId) {
   try {
     const response = await fetch(apiUrl, {
       method: 'DELETE',
-      credentials: 'include',
-      mode: 'cors',
       headers: {
         'Content-type': 'application/json',
         Authorization: document.cookie,
-        Accept: 'application/json',
       },
     })
+    console.log(response.status)
     if (response.status === 200) {
-      console.log(`Movie with ID ${movieId} deleted successfully.`)
+      display()
+      alert(`Movie with ID ${movieId} deleted successfully.`)
     } else if (response.status === 404) {
       alert('Movie not found')
     } else if (response.status === 401) {
       alert('Authorization required')
+    } else if (response.status === 400) {
+      alert('Invalid Id')
     }
   } catch (error) {
-    console.error('Error:', error)
+    console.log(error)
   }
 }
 
@@ -154,14 +161,15 @@ document
 
         if (response.ok) {
           const jsonResponse = await response.json()
-          console.log(jsonResponse)
-
+          alert('movie edited successfully')
+          display()
           form.reset()
         } else {
           console.error('Failed to edit the movie.')
+          alert('Failed to edit the movie.')
         }
       } catch (error) {
-        console.error('An error occurred:', error)
+        alert('An error occurred:', error)
       }
     }
 
