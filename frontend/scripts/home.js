@@ -264,16 +264,19 @@ document
             tr.appendChild(td3);
             tbody.appendChild(tr);
           });
+          document
+            .getElementById("searchResultBook")
+            .addEventListener("click", (event) => {
+              console.log("Evalue", event.target.value);
+              modal.style.display = "block";
+              movie = movieCollection.filter(
+                (m) => m._id == event.target.value
+              );
+              setValueToModal(movie);
+            });
         }
       }
     } catch (err) {
       console.log(err);
     }
-    document
-      .getElementById("searchResultBook")
-      .addEventListener("click", (event) => {
-        console.log("Evalue", event.target.value);
-        modal.style.display = "block";
-        setValueToModal(event.target.value);
-      });
   });
