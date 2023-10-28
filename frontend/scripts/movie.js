@@ -22,10 +22,10 @@ function dynamicButton() {
   const logOutButton = document.getElementById('logOutButton')
   if (getToken()) {
     logOutButton.textContent = 'Log Out' // Change the text
-    logOutButton.href = '/frontend/pages/login.html' // Change the href
+    logOutButton.href = 'login.html' // Change the href
   } else {
     logOutButton.textContent = 'Login' // Change the text to something else
-    logOutButton.href = '/frontend/pages/login.html' // Change the href to the login page or wherever you want
+    logOutButton.href = 'login.html' // Change the href to the login page or wherever you want
   }
 }
 const form = document.getElementById('uploadForm')
