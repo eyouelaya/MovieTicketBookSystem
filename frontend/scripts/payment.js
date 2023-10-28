@@ -2,7 +2,11 @@ const payButton = document.getElementById('payButton')
 
 payButton.addEventListener('click', async function (event) {
   event.preventDefault()
-
+ // Check if required fields are empty
+ const myform= document.getElementById("payment-form")
+ if (!myform.checkValidity()) {
+  return;
+}
   const storedData = localStorage.getItem('ticketData')
 
   if (storedData) {

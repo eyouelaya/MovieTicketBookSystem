@@ -27,7 +27,7 @@ input {
 }
 
 button {
-  background-color: #007bff;
+  background-color: var(--color-yellow);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -37,6 +37,9 @@ button {
   margin-top: 20px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.btn:hover {
+  background-color: var(--color-dark-yellow);
+}
+.btn{
+  background-color: var(--color-yellow);
 }
