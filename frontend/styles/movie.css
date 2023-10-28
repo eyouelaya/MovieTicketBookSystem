@@ -1,5 +1,6 @@
 body {
     margin-bottom: 30px;
+    color: var(--color-yellow);
 }
 footer {
     position: fixed;
@@ -28,4 +29,12 @@ footer {
     font-family: cursive;
     font-style: italic;
     font-size: medium;
+}
+#logOutButton {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+}
+#logOutButton:hover {
+    background-color: var(--color-dark-yellow);
+    color: var(--color-black);
 }

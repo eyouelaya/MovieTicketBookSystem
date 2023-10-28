@@ -235,3 +235,9 @@ body {
 }
    
    
+#movieModal span, svg {
+    color: var(--color-white);
+}
+#movieModal>a{
+    color: var(--color-white);
+}

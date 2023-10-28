@@ -20,9 +20,7 @@ async function login(email, password) {
     headers: { "Content-type": "application/json", Accept: "application/json" },
   });
   if (response.ok) {
-    let loggedin = await response.json();
-    console.log(loggedin);
-    //Todo: redirect to admin page
+    window.location.href = "movie.html";
   } else {
     console.log("Error" + response.status);
   }
