@@ -5,7 +5,7 @@
     --color-dark-yellow:#8a915e;
    
   }
-  body{
+body{
     background-color: var(--color-black);
 }
   .nav-style {
