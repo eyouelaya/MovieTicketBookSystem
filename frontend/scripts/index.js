@@ -56,7 +56,7 @@ async function getMovies() {
 }
 
 function loadMainCard(movies) {
-  const recent = movies.slice(movies.length - 5, movies.length - 1);
+  const recent = movies.slice(movies.length - 4, movies.length);
   document.getElementById("mainCardImg1").src =
     "http://localhost:3000/" + recent[0]["imageLink"];
   document.getElementById("mainCardImg2").src =
@@ -84,7 +84,7 @@ function loadMainCard(movies) {
 }
 
 function loadMoviesToday(movies) {
-  const today = movies.slice(movies.length - 6, movies.length - 1);
+  const today = movies.slice(movies.length - 5, movies.length);
   for (let movie of today) {
     movie.imageLink = movie.imageLink.replace(/\\/g, "/");
   }
@@ -133,7 +133,7 @@ function loadMoviesToday(movies) {
 
 function loadLastestRelease(movies) {
   console.log(movies.length);
-  const recent = movies.slice(movies.length, movies.length - 1);
+  const recent = movies.slice(movies.length, movies.length);
 }
 
 //search function

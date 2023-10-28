@@ -44,11 +44,8 @@ document
         const response = await fetch("http://localhost:3000/movies", {
           method: "POST",
           body: formData,
-          credentials: "include",
           headers: {
-            "Content-type": "application/json",
             Authorization: document.cookie,
-            Accept: "application/json",
           },
         });
 
@@ -103,3 +100,41 @@ document.getElementById("logOutButton").addEventListener("click", () => {
   document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   window.location.href = "login.html";
 });
+
+const editForm = document.getElementById("editForm");
+document
+  .getElementById("btnEditMovie")
+  .addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    async function edit() {
+      const formData = new FormData(editForm);
+      const movieId = document.getElementById("editId").value;
+
+      try {
+        const response = await fetch(
+          `http://localhost:3000/movies/${movieId}`,
+          {
+            method: "PUT",
+            body: formData,
+            headers: {
+              Authorization: document.cookie,
+            },
+          }
+        );
+
+        if (response.ok) {
+          const jsonResponse = await response.json();
+          console.log(jsonResponse);
+
+          form.reset();
+        } else {
+          console.error("Failed to edit the movie.");
+        }
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
+    }
+
+    edit();
+  });
