@@ -253,3 +253,19 @@ body {
 #mainCardBook3{
     z-index: 5;
 } 
+
+#searchTable{
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+}
+#searchTable th{
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+#searchTable button{
+    background-color: var(--color-yellow);
+}
+#searchTable button:hover{
+    background-color: var(--color-dark-yellow);
+}
