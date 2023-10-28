@@ -63,6 +63,10 @@ for (let i = 0; i < 7; i++) {
 
 let selectedDate = null
 let selectedTime = null
+// Get the current URL
+const currentURL = window.location.href;
+const parts = currentURL.split('=');
+const id = parts[parts.length - 1];
 
 const timeBoxes = document.querySelectorAll('.time-box')
 
@@ -86,8 +90,8 @@ dateCells.forEach((cell) => {
     cell.classList.add('selected')
     selectedDate = cell.querySelector('.date-numeric').textContent
     selectedDateDay = cell.querySelector('.date-day').textContent
-    console.log(selectedDate)
-    console.log(selectedDateDay)
+    // console.log(selectedDate)
+    // console.log(selectedDateDay)
     updateButtonState()
   })
 })
@@ -116,11 +120,7 @@ const id = parts[parts.length - 1];
     let ticket = await response.json();
   let date = selectedDate + ' ' + selectedDateDay + ' ' + selectedTime
   const ticketData = {
-    // movieName: ticket.movieName,
-    // runningTime: ticket.runningTime,
-    // image: ticket.image,
     movieDate: date,
-    // code:ticket.code
   }
   const response2 = await fetch(`http://localhost:3000/tickets/${id}`, {
     method: 'PUT',
@@ -137,5 +137,4 @@ if(response2){
 }
 
     }
-//   window.location.href = 'payment.html'
 })
