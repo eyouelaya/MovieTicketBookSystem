@@ -1,3 +1,6 @@
 .text-custom-yellow {
-    color: #EEF36F;
+    color: var(--color-yellow);
+}
+body{
+    color: var(--color-dark); 
 }

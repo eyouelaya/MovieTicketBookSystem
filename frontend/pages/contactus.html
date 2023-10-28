@@ -1,89 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
+
+    <!-- Add Bootstrap CSS and custom styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../styles/style.css" />
     <link rel="stylesheet" type="text/css" href="../styles/contactus.css" />
-    <!-- Add Bootstrap CSS and custom styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
-<body class="bg-dark">
+  </head>
+  <body class="">
     <nav class="navbar navbar-expand-lg navbar-light nav-style">
-        <div class="container">
-          <a class="navbar-brand" href="#">IMAX Movie Theater</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNavAltMarkup"
-          >
-            <div class="navbar-nav ml-auto">
-              <a class="nav-item nav-link" href="#">Manage Ticket Booking</a>
-              <a class="nav-item nav-link" href="#">Contact Us</a>
-              <a class="nav-item nav-link disabled" href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  fill="currentColor"
-                  class="bi bi-sun-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
-                  />
-                </svg>
-              </a>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">IMAX Movie Theater</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="./manageTicket.html"
+              >Manage Ticket Booking</a
+            >
+            <a class="nav-item nav-link" href="./contactus.html">Contact Us</a>
+            <a class="nav-item nav-link" value="dark" id="themeSwitcher">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="currentColor"
+                class="bi bi-sun-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
-      </nav>   
-          <header class="bg-dark text-custom-yellow text-center py-4"> <!-- Set the text color to custom yellow -->
-              <h1>Contact Us</h1>
-          </header>
-          <div class="container my-5">
-              <div class="row">
-                  <div class="col-md-6">
-                      <h2 class="text-custom-yellow">Contact Information</h2>
-                      <p class="text-custom-yellow"> <!-- Set the text color to custom yellow -->
-                          Feel free to reach out to us with any questions or feedback. We are here to help you!
-                      </p>
-                      <p class="text-custom-yellow"> <!-- Set the text color to custom yellow -->
-                          <strong>Address:</strong><br>
-                          1000 N 4th St<br>
-                          Fairfield, IA 52557
-                      </p>
-                      <p class="text-custom-yellow"> <!-- Set the text color to custom yellow -->
-                          <strong>Email:</strong><br>
-                          ygebreslasie@miu.edu
-                      </p>
-                      <p class="text-custom-yellow"> <!-- Set the text color to custom yellow -->
-                          <strong>Phone:</strong><br>
-                          +1 (641) 233-9990
-                      </p>
-                  </div>
-                  <div class="col-md-6">
-                      <h2 class="text-custom-yellow">Location</h2>
-                      <div class="embed-responsive embed-responsive-16by9">
-                    <!-- You can embed a map here using an iframe from a map service like Google Maps -->
-                    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d41.02274454940423!3d-91.96643899795286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMzDCsDQyJzM2LjYiTiA5MMKwNDknMjIuMyJX!5e0!3m2!1en!2sus!4v1234567890123!5m2!1en!2sus" allowfullscreen width="600" height="400"></iframe>
-                     </div>
-            </div>
+      </div>
+    </nav>
+    <!-- nav bar -->
+    <header class="text-custom-yellow text-center py-4">
+      <!-- Set the text color to custom yellow -->
+      <h1>Contact Us</h1>
+    </header>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="text-custom-yellow">Contact Information</h2>
+          <p class="text-custom-yellow">
+            <!-- Set the text color to custom yellow -->
+            Feel free to reach out to us with any questions or feedback. We are
+            here to help you!
+          </p>
+          <p class="text-custom-yellow">
+            <!-- Set the text color to custom yellow -->
+            <strong>Address:</strong><br />
+            1000 N 4th St<br />
+            Fairfield, IA 52557
+          </p>
+          <p class="text-custom-yellow">
+            <!-- Set the text color to custom yellow -->
+            <strong>Email:</strong><br />
+            ygebreslasie@miu.edu
+          </p>
+          <p class="text-custom-yellow">
+            <!-- Set the text color to custom yellow -->
+            <strong>Phone:</strong><br />
+            +1 (641) 233-9990
+          </p>
         </div>
+        <div class="col-md-6">
+          <h2 class="text-custom-yellow">Location</h2>
+          <div class="embed-responsive embed-responsive-16by9">
+            <!-- You can embed a map here using an iframe from a map service like Google Maps -->
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d41.02274454940423!3d-91.96643899795286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMzDCsDQyJzM2LjYiTiA5MMKwNDknMjIuMyJX!5e0!3m2!1en!2sus!4v1234567890123!5m2!1en!2sus"
+              allowfullscreen
+              width="450"
+              height="350"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Add Bootstrap JS (optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="../scripts/index.js"></script>
+  </body>
 </html>
