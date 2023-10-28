@@ -1,12 +1,9 @@
-// Function to populate the table with tickets
 // Store a Set to keep track of displayed ticket codes
-
 const displayedTicketCodes = new Set();
 window.onload = async function () {
-  const currentURL = window.location.href;
-  const parts = currentURL.split("=");
-  const id = parts[1];
-  if (id) {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has("id")) {
     const response = await fetch(`http://localhost:3000/tickets/${id}`);
     if (response.ok) {
       let ticket = await response.json();
@@ -14,6 +11,7 @@ window.onload = async function () {
     }
   }
 };
+
 // Function to populate the table with tickets, checking if it has been displayed
 const populateTable = (ticket) => {
   const ticketTable = document.getElementById("ticketTable");

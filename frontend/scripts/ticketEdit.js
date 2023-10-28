@@ -108,31 +108,25 @@ function updateButtonState() {
 const continueButton = document.getElementById("continueButton");
 
 continueButton.addEventListener("click", async function () {
-  // Get the current URL
-  const currentURL = window.location.href;
-  const parts = currentURL.split("=");
-  const id = parts[parts.length - 1];
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-  const response = await fetch(`http://localhost:3000/tickets/${id}`);
-  if (response.ok) {
-    let ticket = await response.json();
-    let date = selectedDate + " " + selectedDateDay + " " + selectedTime;
-    const ticketData = {
-      movieDate: date,
-    };
-    const response2 = await fetch(`http://localhost:3000/tickets/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(ticketData),
-    });
-    if (response2) {
-      const ticket = await response2.json();
-      alert("ticket edited sucessfully!");
-      window.open("manageTicket.html?id=" + ticket.code);
-    } else {
-      alert("not edited try again");
-    }
+  let date = selectedDate + " " + selectedDateDay + " " + selectedTime;
+  const ticketData = {
+    movieDate: date,
+  };
+  const response2 = await fetch(`http://localhost:3000/tickets/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(ticketData),
+  });
+  if (response2) {
+    const ticket = await response2.json();
+    alert("ticket edited sucessfully!");
+    window.open("manageTicket.html?id=" + ticket.code);
+  } else {
+    alert("not edited try again");
   }
 });
