@@ -79,7 +79,6 @@ document
         if (response.ok) {
           const jsonResponse = await response.json()
           console.log(jsonResponse)
-
           form.reset()
         } else {
           console.error('Failed to upload the movie.')
