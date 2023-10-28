@@ -15,7 +15,7 @@ if (storedData) {
   bookingCodeElement.textContent = `Booking Code: ${ticketData.code}`
 
   const moviePosterImage = document.querySelector('.header img')
-  moviePosterImage.src = ticketData.image
+  moviePosterImage.src = 'http://localhost:3000/' + ticketData.image
 } else {
   // Handle the case where data is not available in localStorage
   console.log('Data not found in localStorage.')
