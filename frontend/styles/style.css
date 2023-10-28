@@ -2,13 +2,14 @@
     --color-yellow: #f6ff7a;
     --color-black: #000000;
     --color-white: #ffffff;
-    --color-dark-yellow:#8a915e;
+    --color-dark-yellow:#c5cf88;
    
   }
-body{
+  body{
     background-color: var(--color-black);
 }
   .nav-style {
+    font-weight: bold;
     background-color: var(--color-black); 
 }
 .nav-style a, svg{
@@ -21,6 +22,9 @@ body{
 }
 .nav-style a:hover{
     color: var(--color-white);
+}
+#themeSwitcher svg{
+  color: var(--color-white);
 }
   /* to use css vairalbe eg 
   color: var(--color-yellow)

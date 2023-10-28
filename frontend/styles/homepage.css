@@ -18,7 +18,7 @@ a{
 .movie-carousel-caption {   
     text-align: left;
     top: 100px;
-    left: 120px;
+    left: 170px;
     width: 20%;
     height: 140px; 
     color: var(--color-black);
@@ -235,9 +235,21 @@ body {
 }
    
    
-#movieModal span, svg {
+#movieModal span {
     color: var(--color-white);
 }
 #movieModal>a{
     color: var(--color-white);
 }
+#mainCardBook1{
+    z-index: 5;
+}
+#mainCardBook2{
+    z-index: 5;
+}
+#mainCardBook3{
+    z-index: 5;
+}
+#mainCardBook3{
+    z-index: 5;
+} 

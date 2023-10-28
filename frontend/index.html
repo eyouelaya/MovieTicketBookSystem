@@ -42,8 +42,8 @@
             <a class="nav-item nav-link" href="./pages/manageTicket.html"
               >Manage Ticket Booking</a
             >
-            <a class="nav-item nav-link" href="#">Contact Us</a>
-            <a class="nav-item nav-link disabled" href="#">
+            <a class="nav-item nav-link" href="./pages/contactus.html">Contact Us</a>
+            <a class="nav-item nav-link" value="dark" id="themeSwitcher">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
@@ -388,107 +388,8 @@
             <!-- End of scrollable movie cards container -->
           </div>
         </div>
-
-        <div class="col">
-          <div class="row">
-            <div class="col-auto">
-              <label class="col-form-label" for="searchMovies">Search</label>
-            </div>
-            <div class="col">
-              <input
-                class="form-control"
-                id="searchMovies"
-                name="searchMovies"
-              />
-            </div>
-          </div>
-          <div class="row m-4">
-            <div class="card movie-card mt-4">
-              <div class="movie-background" id="todayMovieImage5"></div>
-              <div class="card-body">
-                <div class="ticket-icon">
-                  <i class="fas fa-ticket-alt"></i>
-                </div>
-                <div class="movie-card-description">
-                  <h5 class="card-title text-center mt-3" id="todayMovieTitle5">
-                    Movie Name
-                  </h5>
-                  <p class="card-text text-center">
-                    <i class="fas fa-clock"></i>
-                    <span id="todayMovieRuntime5">1 H 20 mins</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="container mt-3 popular-movies">
-      <h4 class="mt-5">LATEST RELEASE</h4>
-      <div class="col">
-        <div class="container mt-4 position-relative">
-          <button id="scroll-left-latest" class="scroll-btn position-absolute">
-            &lt;
-          </button>
-          <button id="scroll-right-latest" class="scroll-btn position-relative">
-            &gt;
-          </button>
-
-          <!-- Start of scrollable movie cards container -->
-          <div class="scrollable-movie-cards-latest">
-            <!-- Movie Card 1 -->
-            <div class="card movie-card">
-              <div class="movie-background" id="latestMovieImage1"></div>
-              <div class="card-body">
-                <div class="ticket-icon">
-                  <i class="fas fa-ticket-alt"></i>
-                </div>
-                <div class="movie-card-description">
-                  <h5
-                    class="card-title text-center mt-3"
-                    id="latestMovieTitle1"
-                  >
-                    Movie Name
-                  </h5>
-                  <p class="card-text text-center">
-                    <i class="fas fa-clock"></i>
-                    <span id="latestMovieRuntime1">1 H 20 mins</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- Movie Card 2 -->
-            <div class="card movie-card">
-              <div class="movie-background"></div>
-              <div class="card-body">
-                <div class="ticket-icon">
-                  <i class="fas fa-ticket-alt"></i>
-                </div>
-                <div class="movie-card-description">
-                  <h5 class="card-title text-center mt-3">Movie Name</h5>
-                  <p class="card-text text-center">
-                    <i class="fas fa-clock"></i> 1 H 20 mins
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="card movie-card">
-              <div class="movie-background"></div>
-              <div class="card-body">
-                <div class="ticket-icon">
-                  <i class="fas fa-ticket-alt"></i>
-                </div>
-                <div class="movie-card-description">
-                  <h5 class="card-title text-center mt-3">Movie Name</h5>
-                  <p class="card-text text-center">
-                    <i class="fas fa-clock"></i> 1 H 20 mins
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- Add more movie cards as needed -->
-          </div>
+    
 
           <!-- End of scrollable movie cards container -->
         </div>
@@ -557,5 +458,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/home.js"></script>
   </body>
 </html>
