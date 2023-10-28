@@ -116,7 +116,7 @@ async function deleteMovieById(movieId) {
     if (response.status === 200) {
       console.log(`Movie with ID ${movieId} deleted successfully.`)
     } else if (response.status === 404) {
-      console.error('Movie not found.')
+      alert('Movie not found')
     } else if (response.status === 401) {
       alert('Authorization required')
     }
