@@ -2,8 +2,8 @@
 const displayedTicketCodes = new Set();
 window.onload = async function () {
   const params = new URLSearchParams(window.location.search);
-
-  if (params.has("id")) {
+  const id = params.get("id");
+  if (id) {
     const response = await fetch(`http://localhost:3000/tickets/${id}`);
     if (response.ok) {
       let ticket = await response.json();
