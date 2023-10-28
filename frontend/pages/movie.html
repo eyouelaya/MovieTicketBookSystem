@@ -76,8 +76,8 @@
           </tbody>
         </table>
       </div>
-      <main class="container p-5">
-        <section class="mt-5">
+    
+        <section>
           <h2>Add Movie</h2>
           <form id="uploadForm" method="post" enctype="multipart/form-data">
             <div class="row">
@@ -145,9 +145,9 @@
             </div>
           </form>
         </section>
-      </main>
+     
 
-      <main class="container p-5">
+      
         <section class="mt-5">
           <h2>Delete Movie</h2>
           <form id="deleteForm">
@@ -168,7 +168,82 @@
             </div>
           </form>
         </section>
-      </main>
+
+         <section class="mt-5">
+          <h2>Edit Movie</h2>
+          <form id="editForm" method="post" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="productNumber" class="form-label">Id</label>
+                  <input type="text" class="form-control" id="editId" name="editId" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="runningTime" name="title" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Genre</label>
+                  <input type="text" class="form-control" id="genre" name="genre"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Trailer Link</label>
+                  <input type="text" class="form-control" id="trailerLink" name="trailerLink"/>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="price" class="form-label">Cover Image</label>
+                  <input type="file" class="form-control" id="coverImage" name="image" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="date" class="form-label">Release Date</label>
+                  <input type="date" class="form-control" name="releaseDate"/>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="price" class="form-label">Description</label>
+                  <textarea class="form-control" rows="4" cols="50" id="description" name="description"></textarea>
+                </div>
+              </div>
+               <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Running Time</label>
+                  <input type="text" class="form-control" id="runningTime" name="runningTime" />
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6">
+                <div class="d-flex justify-content-end">
+
+                  <button type="submit" id="btnEditMovie" class="btn btn-outline-primary">
+                    Edit Movie
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+     
     </div>
 
     <!-- End main-content -->
