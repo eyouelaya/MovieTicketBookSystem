@@ -229,6 +229,10 @@ function parseDate(dateString) {
 document
   .getElementById("searchMovies")
   .addEventListener("input", async function (event) {
+    let tablebody = document.getElementById("searchTableBody");
+    while (tablebody.firstChild) {
+      tablebody.removeChild(tablebody.firstChild);
+    }
     const inputValue = event.target.value;
 
     console.log("Current input:", inputValue);
