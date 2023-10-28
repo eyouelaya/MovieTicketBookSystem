@@ -221,6 +221,55 @@ document.getElementById("modalbookMovie").addEventListener("click", (event) => {
 function parseDate(dateString) {
   const date = new Date(dateString);
   const year = date.getUTCFullYear();
-  const month = date.getUTCMonth() + 1; // Months are zero-based
+  const month = date.getUTCMonth() + 1;
   return `${year}-${month.toString().padStart(2, "0")}`;
 }
+
+//search function
+document
+  .getElementById("searchMovies")
+  .addEventListener("input", async function (event) {
+    const inputValue = event.target.value;
+
+    console.log("Current input:", inputValue);
+    try {
+      let response = await fetch(
+        "http://localhost:3000/movies?title=" + inputValue
+      );
+      if (response.ok) {
+        let json = await response.json();
+        if (json) {
+          let tbody = document.getElementById("searchTableBody");
+          let tr = document.createElement("tr");
+          json.forEach((element) => {
+            let tr = document.createElement("tr");
+            console.log(element.title, element.genre);
+            let td1 = document.createElement("td");
+            td1.appendChild(document.createTextNode(element.title));
+            let td2 = document.createElement("td");
+            td2.appendChild(document.createTextNode(element.genre));
+            let td3 = document.createElement("td");
+            let button = document.createElement("button");
+            button.setAttribute("value", element._id);
+            button.setAttribute("id", "searchResultBook");
+            button.setAttribute("class", "btn");
+            button.appendChild(document.createTextNode("Book"));
+            td3.appendChild(button);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tbody.appendChild(tr);
+          });
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    document
+      .getElementById("searchResultBook")
+      .addEventListener("click", (event) => {
+        console.log("Evalue", event.target.value);
+        modal.style.display = "block";
+        setValueToModal(event.target.value);
+      });
+  });
